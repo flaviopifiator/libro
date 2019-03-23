@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ object.titulo }}</h1>
+    <div>
+        <span>{{ object.sinopsis }}</span><br>
+        <span>${{ object.precio }}</span><br>
+        <span>{{ object.get_idioma_display}}</span><br>
+        <span>
+            Autores:
+            {% for autor in object.autor.all %}
+                {{forloop.counter}}
+                <span>{{ autor.nombre }}</span>
+                <span>{{ autor.apellido }}</span>
+                <span>{{ autor.dni }}</span>
+                <br>
+            {% endfor %}
+        </span>
+        <span>
+            Categorias:
+            {% for categoria in object.categoria.all %}
+                {{forloop.counter}}
+                <span>{{ categoria.nombre }}</span><br>
+            {% endfor %}
+        </span>
+
+        <span>
+            {{ object.editorial.nombre}}
+            {{ object.editorial.nombre_direccion }}
+            {{ object.editorial.numero_direccion }}
+            
+        </span>
+        
+    </div>
+    
+
+{% endblock %}

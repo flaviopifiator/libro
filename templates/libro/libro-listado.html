@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Listado de Libros {% endblock %}
+
+{% block content %}
+<h2>Listado de Libros</h2>
+
+{% for libro in object_list %}
+    <h1><a href="{% url 'libro:detalle-libro' libro.pk %}">{{ libro.titulo }}</a></h1>
+    <div>
+        <span>{{ libro.sinopsis }}</span>
+    </div>
+{% endfor %}
+
+{% endblock %}

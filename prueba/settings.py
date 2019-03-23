@@ -25,7 +25,7 @@ SECRET_KEY = '#co1y=7#gwlz4s+km+p3via5hoyp70$w#k(%_qy43@l2%6ozso'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.9', 'localhost']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'libros',
     'util',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'prueba.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,3 +122,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(os.path.abspath(BASE_DIR), 'static')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "assets"),
+)
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.abspath(BASE_DIR), 'media')
