@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
     <h1>{{ object.titulo }}</h1>
+    <a href="{% url 'libro:actualizar-libro' object.pk %}">Actualizar</a>
     <div>
         <span>{{ object.sinopsis }}</span><br>
         <span>${{ object.precio }}</span><br>

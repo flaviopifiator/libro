@@ -24,4 +24,5 @@ urlpatterns = [
 
     path('', HomeView.as_view(), name='home'),
     path('libro/', include('libros.urls', namespace='libro')),
+    path('user/', include('user.urls', namespace='user')),
 ]
