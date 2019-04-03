@@ -3,7 +3,50 @@
 {% block content %}
 <form action="." method="post">
     {% csrf_token %}
-    {{form.as_p}}
+    <div class="form-group row">
+        <div class="col-sm-4 mb-3 mb-sm-0">
+            <label for="id_titulo">Titulo Libro</label>
+            {{ form.titulo }}
+        </div>
+        <div class="col-sm-4 mb-3 mb-sm-0">
+            <label for="id_idioma">Idioma</label>
+            {{ form.idioma }}
+        </div>    
+        <div class="col-sm-4 mb-3 mb-sm-0">
+            <label for="id_precio">Precio</label>
+            {{ form.precio }}
+        </div>    
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <label for="id_sinopsis">Sinopsis</label>
+            {{ form.sinopsis }}
+        </div>
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <label for="id_año_publicacion">Año Publicación</label>
+            {{ form.año_publicacion }}
+        </div>
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <label for="id_cantidad_paginas">Cantidad Paginas</label>
+            {{ form.cantidad_paginas }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4 mb-3 mb-sm-0">
+            <label for="id_autor">Autores</label>
+            {{ form.autor }}
+        </div>
+        <div class="col-sm-4 mb-3 mb-sm-0">
+            <label for="id_categoria">Categoría</label>
+            {{ form.categoria }}
+        </div>
+        <div class="col-sm-4 mb-3 mb-sm-0">
+            <label for="id_editorial">Editorial</label>
+            {{ form.editorial }}
+            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">+</a>
+        </div>
+    </div>
+    
     <button type="submit">Enviar</button>
 </form>
 {% endblock %}

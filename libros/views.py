@@ -23,6 +23,11 @@ class LibroCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('libro:listado-libros')
     form_class = forms.LibroForm
 
+    def get_form_kwargs(self):
+        context = super().get_form_kwargs()
+        context.update(user=self.request.user)
+        return context
+
 
 class LibroUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Libro
